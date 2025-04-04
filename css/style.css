@@ -2306,6 +2306,7 @@ body::-webkit-scrollbar-thumb {
   }
 
   .callback {
+    overflow: hidden;
     height: clamp(361.2972px, 56.4583333333vw, 1084px);
   }
 
@@ -2377,6 +2378,16 @@ body::-webkit-scrollbar-thumb {
 
   .services__cards {
     width: 100%;
+  }
+
+  .footer__social-icon {
+    width: clamp(13.9986px, 2.1875vw, 42px);
+    height: clamp(13.9986px, 2.1875vw, 42px);
+  }
+
+  .footer__social-icon svg {
+    width: 60%;
+    height: 60%;
   }
 }
 
@@ -2607,5 +2618,13 @@ body::-webkit-scrollbar-thumb {
 
   .partners {
     padding-bottom: clamp(35px, 10.9375vw, 70px);
+  }
+
+  .footer__social-icon {
+    width: clamp(21px, 6.5625vw, 42px);
+  }
+
+  .footer__social-icon {
+    height: clamp(21px, 6.5625vw, 42px);
   }
 }
