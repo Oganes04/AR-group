@@ -1350,7 +1350,7 @@ body::-webkit-scrollbar-thumb {
 
 .services__cards .services__card.second-type .services__card-content > svg {
   margin: 0 auto;
-  display: block;
+  display: none;
 }
 
 .services__cards .services__card.second-type .highlighting {
@@ -2914,6 +2914,11 @@ body::-webkit-scrollbar-thumb {
     margin-top: clamp(-24.6642px, -3.8541666667vw, -74px);
   }
 
+  .offer .container {
+    position: relative;
+    z-index: 100;
+  }
+
   .offer .offer__bg {
     height: 100%;
   }
@@ -3157,6 +3162,10 @@ body::-webkit-scrollbar-thumb {
     display: none;
   }
 
+  .services__cards .services__card.second-type .services__card-content > svg {
+    display: block;
+  }
+
   .footer__social-icon {
     width: clamp(13.9986px, 2.1875vw, 42px);
     height: clamp(13.9986px, 2.1875vw, 42px);
@@ -3165,6 +3174,10 @@ body::-webkit-scrollbar-thumb {
   .footer__social-icon svg {
     width: 60%;
     height: 60%;
+  }
+
+  .footer {
+    overflow: hidden;
   }
 
   .header__inner {
@@ -3242,6 +3255,23 @@ body::-webkit-scrollbar-thumb {
     -webkit-transform: translate(0, 0);
     -o-transform: translate(0, 0);
     transform: translate(0, 0);
+  }
+
+  .popup {
+    width: 95%;
+    padding-top: clamp(39.996px, 6.25vw, 120px);
+  }
+
+  .why__inner article p.fade-in {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.9s ease-out, transform 1s ease-out !important;
+    will-change: opacity, transform;
+  }
+
+  .why__inner article p.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
@@ -3524,5 +3554,9 @@ body::-webkit-scrollbar-thumb {
 
   .header-adaptive__nav nav ul {
     gap: clamp(25px, 7.8125vw, 50px);
+  }
+
+  .popup {
+    padding-top: clamp(60px, 18.75vw, 120px);
   }
 }

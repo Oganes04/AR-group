@@ -37,6 +37,7 @@ function Marquee(selector, speed) {
   //after window is completed load
   //1 class selector for marquee
   //2 marquee speed 0.2
+  window.addEventListener('load', MarqueeRight('.marquee', 0.2))
   window.addEventListener('load', MarqueeRight('.partners__marquee.right', 0.2))
   window.addEventListener('load', Marquee('.partners__marquee', 0.2))
   window.addEventListener('load', Marquee('.partners__marquee.last', 0.2))
@@ -387,6 +388,31 @@ $(document).on('click', '.popup_close', function(e) {
 $('.popup-callme-btn').click(function() {
   openPopup($('.popup-callme'));
 });
+
+
+$(document).ready(function() {
+  $(document).mouseup(function(e) {
+      var container = $('.popup');
+      if (!container.is(e.target) && container.has(e.target).length === 0) {
+          container.hide();
+          $('.overlay').hide();
+          $('html').css('overflow-y', 'auto');
+      }
+  });
+
+
+  $(document).on('keydown', function(e) {
+    if (e.key === 'Escape' || e.keyCode === 27) {
+      $('.popup').hide();
+      $('.overlay').hide();
+      $('html').css('overflow-y', 'auto');
+    }
+  });
+});
+
+
+
+
 
 
 
