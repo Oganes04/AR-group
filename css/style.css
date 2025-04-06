@@ -203,6 +203,11 @@ img {
 .section__header:has(.section__header-btns) .section__header-btns svg {
   width: clamp(19.3314px, 3.0208333333vw, 58px);
   height: clamp(19.3314px, 3.0208333333vw, 58px);
+  -webkit-transition: all 0.3s ease 0s;
+  -moz-transition: all 0.3s ease 0s;
+  -ms-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
 }
 
 .section__header:has(.section__header-btns) .section__header-btns svg.swiper-button-disabled {
@@ -641,6 +646,26 @@ body::-webkit-scrollbar-thumb {
 
 .marquee-right .partners__marquee-wrapper {
   animation: marquee-right 20s linear infinite;
+}
+
+@keyframes marquee1 {
+  0% {
+    transform: translateX(100%);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes marquee2 {
+  0% {
+    transform: translateX(0%);
+  }
+
+  100% {
+    transform: translateX(-200%);
+  }
 }
 
 .header {
@@ -1093,6 +1118,12 @@ body::-webkit-scrollbar-thumb {
   margin-right: clamp(16.665px, 2.6041666667vw, 50px);
 }
 
+.cases {
+  padding-bottom: clamp(23.331px, 3.6458333333vw, 70px);
+  min-height: fit-content;
+  height: auto;
+}
+
 .cases .section__header {
   position: sticky;
   top: clamp(39.996px, 6.25vw, 120px);
@@ -1243,13 +1274,27 @@ body::-webkit-scrollbar-thumb {
 .wrapper {
   position: relative;
   height: 100%;
+  position: relative;
+  padding-top: clamp(39.996px, 6.25vw, 120px);
 }
 
 .services__header {
   padding-top: clamp(23.331px, 3.6458333333vw, 70px);
   background-color: #F1F5F2;
-  position: sticky;
   top: clamp(6.666px, 1.0416666667vw, 20px);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.services__header .container {
+  position: relative;
+  height: 100%;
+}
+
+.services__header .container .section__header {
+  position: sticky;
+  top: clamp(33.33px, 5.2083333333vw, 100px);
   height: 90vh;
 }
 
@@ -1266,6 +1311,7 @@ body::-webkit-scrollbar-thumb {
 .services__inner {
   position: relative;
   margin-top: clamp(49.995px, 7.8125vw, 150px);
+  padding-bottom: clamp(33.33px, 5.2083333333vw, 100px);
 }
 
 .services__cards {
@@ -1275,7 +1321,6 @@ body::-webkit-scrollbar-thumb {
   grid-template-rows: repeat(var(--cards-count), var(--card-height));
   display: grid;
   gap: clamp(26.664px, 4.1666666667vw, 80px);
-  row-gap: 0;
 }
 
 .services__cards .services__card {
@@ -1306,6 +1351,19 @@ body::-webkit-scrollbar-thumb {
 
 .services__cards .services__card img {
   height: clamp(138.6528px, 21.6666666667vw, 416px);
+}
+
+.services__cards .services__card .round__btn {
+  margin-top: clamp(19.998px, 3.125vw, 60px);
+  position: absolute;
+  top: 0;
+  right: clamp(18.3315px, 2.8645833333vw, 55px);
+}
+
+.services__cards .services__card .round__btn span {
+  color: #FFFFFF;
+  background-color: #00B073 !important;
+  height: clamp(19.998px, 3.125vw, 60px);
 }
 
 .services__cards .services__card.second-type strong {
@@ -1406,6 +1464,7 @@ body::-webkit-scrollbar-thumb {
 
 .partners__inner {
   position: relative;
+  overflow: hidden;
 }
 
 .partners__inner button {
@@ -1462,13 +1521,29 @@ body::-webkit-scrollbar-thumb {
 }
 
 .partners__marquee {
-  overflow: hidden;
+  overflow: visible !important;
   display: flex;
   width: 100%;
 }
 
 .partners__marquee:not(:last-child) {
   margin-bottom: clamp(13.332px, 2.0833333333vw, 40px);
+}
+
+.partners__marquee.fade-in-right {
+  transform: translateX(500px);
+}
+
+.partners__marquee.fade-in-left {
+  transform: translateX(-500px);
+}
+
+.partners__marquee.fade-in-right.visible {
+  transform: translateX(0);
+}
+
+.partners__marquee.fade-in-left.visible {
+  transform: translateX(0);
 }
 
 .partners__marquee-wrapper {
@@ -1616,10 +1691,15 @@ body::-webkit-scrollbar-thumb {
   right: clamp(-6.666px, -1.0416666667vw, -20px);
   z-index: 100;
   cursor: pointer;
+  -webkit-transition: all 0.3s ease 0s;
+  -moz-transition: all 0.3s ease 0s;
+  -ms-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
 }
 
 .aboutSwiper-wrapper .aboutSwiper-silder-next.swiper-button-disabled {
-  display: none;
+  opacity: 0;
 }
 
 .aboutSwiper-wrapper .aboutSwiper-silder-prev {
@@ -1646,10 +1726,15 @@ body::-webkit-scrollbar-thumb {
   left: clamp(-6.666px, -1.0416666667vw, -20px);
   z-index: 100;
   cursor: pointer;
+  -webkit-transition: all 0.3s ease 0s;
+  -moz-transition: all 0.3s ease 0s;
+  -ms-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
 }
 
 .aboutSwiper-wrapper .aboutSwiper-silder-prev.swiper-button-disabled {
-  display: none;
+  opacity: 0;
 }
 
 .aboutSwiper .swiper-wrapper {
@@ -1788,6 +1873,7 @@ body::-webkit-scrollbar-thumb {
 .callback {
   position: relative;
   background-color: #101311;
+  min-height: 90vh;
 }
 
 .callback > img {
@@ -2438,6 +2524,10 @@ body::-webkit-scrollbar-thumb {
     margin-right: clamp(25px, 7.8125vw, 50px);
   }
 
+  .cases {
+    padding-bottom: clamp(35px, 10.9375vw, 70px);
+  }
+
   .cases .section__header {
     top: clamp(60px, 18.75vw, 120px);
   }
@@ -2490,6 +2580,10 @@ body::-webkit-scrollbar-thumb {
     width: clamp(150px, 46.875vw, 300px);
   }
 
+  .wrapper {
+    padding-top: clamp(60px, 18.75vw, 120px);
+  }
+
   .services__header {
     padding-top: clamp(35px, 10.9375vw, 70px);
   }
@@ -2498,12 +2592,20 @@ body::-webkit-scrollbar-thumb {
     top: clamp(10px, 3.125vw, 20px);
   }
 
+  .services__header .container .section__header {
+    top: clamp(50px, 15.625vw, 100px);
+  }
+
   .services {
     padding-bottom: clamp(35px, 10.9375vw, 70px);
   }
 
   .services__inner {
     margin-top: clamp(75px, 23.4375vw, 150px);
+  }
+
+  .services__inner {
+    padding-bottom: clamp(50px, 15.625vw, 100px);
   }
 
   .services__cards {
@@ -2544,6 +2646,18 @@ body::-webkit-scrollbar-thumb {
 
   .services__cards .services__card img {
     height: clamp(208px, 65vw, 416px);
+  }
+
+  .services__cards .services__card .round__btn {
+    margin-top: clamp(30px, 9.375vw, 60px);
+  }
+
+  .services__cards .services__card .round__btn {
+    right: clamp(27.5px, 8.59375vw, 55px);
+  }
+
+  .services__cards .services__card .round__btn span {
+    height: clamp(30px, 9.375vw, 60px);
   }
 
   .services__cards .services__card.second-type strong {
@@ -2994,6 +3108,10 @@ body::-webkit-scrollbar-thumb {
     width: 80%;
   }
 
+  .why .section__header-btns {
+    display: none !important;
+  }
+
   .about .section__header button {
     display: none;
   }
@@ -3122,6 +3240,7 @@ body::-webkit-scrollbar-thumb {
 
   .services__cards {
     width: 100%;
+    gap: clamp(13.332px, 2.0833333333vw, 40px);
   }
 
   .services__cards .services__card {
@@ -3136,6 +3255,15 @@ body::-webkit-scrollbar-thumb {
 
   .services__cards .services__card p {
     font-size: clamp(8.6658px, 1.3541666667vw, 26px);
+  }
+
+  .services__cards .services__card .round__btn {
+    position: static;
+  }
+
+  .services__cards .services__card .round__btn span:last-child {
+    width: clamp(19.998px, 3.125vw, 60px);
+    height: clamp(19.998px, 3.125vw, 60px);
   }
 
   .services__cards .services__card img {
@@ -3504,6 +3632,10 @@ body::-webkit-scrollbar-thumb {
     padding-bottom: clamp(35px, 10.9375vw, 70px);
   }
 
+  .services__cards {
+    gap: clamp(20px, 6.25vw, 40px);
+  }
+
   .services__cards .services__card {
     min-height: clamp(214.5px, 67.03125vw, 429px);
   }
@@ -3518,6 +3650,14 @@ body::-webkit-scrollbar-thumb {
 
   .services__cards .services__card p {
     font-size: clamp(13px, 4.0625vw, 26px);
+  }
+
+  .services__cards .services__card .round__btn span:last-child {
+    width: clamp(30px, 9.375vw, 60px);
+  }
+
+  .services__cards .services__card .round__btn span:last-child {
+    height: clamp(30px, 9.375vw, 60px);
   }
 
   .services__cards .services__card.second-type p {

@@ -48,11 +48,6 @@ function Marquee(selector, speed) {
 
 
 
-
-
-
-
-
 const { ScrollObserver, valueAtPercentage } = aat
 
 const cardsContainer = document.querySelector('.services__cards')
@@ -441,3 +436,20 @@ $(".header-adaptive__nav nav ul li ").click(function() {
  $("html").removeClass("hidden");
 });
 
+
+
+// $(function() {
+//   $('.marquee-1').marquee({
+//       duration: 23000,
+//       startVisible: true,
+//       duplicated: true,
+//       direction: 'left'
+//   });
+  
+//   $('.marquee-2').marquee({
+//       duration: 23000,
+//       startVisible: true,
+//       duplicated: true,
+//       direction: 'right'
+//   });
+// });
