@@ -37,7 +37,6 @@ function Marquee(selector, speed) {
   //after window is completed load
   //1 class selector for marquee
   //2 marquee speed 0.2
-  window.addEventListener('load', Marquee('.marquee', 0.2))
   window.addEventListener('load', MarqueeRight('.partners__marquee.right', 0.2))
   window.addEventListener('load', Marquee('.partners__marquee', 0.2))
   window.addEventListener('load', Marquee('.partners__marquee.last', 0.2))
@@ -45,7 +44,13 @@ function Marquee(selector, speed) {
 
 
 
-// This was built using aat.js: https://github.com/TahaSh/aat
+
+
+
+
+
+
+
 
 const { ScrollObserver, valueAtPercentage } = aat
 
@@ -94,6 +99,7 @@ if (document.querySelectorAll('.aboutSwiper').length) {
 
     navigation: {
         nextEl: ".aboutSwiper-silder-next",
+        prevEl: ".aboutSwiper-silder-prev",
     },
 
 
@@ -117,6 +123,11 @@ if (document.querySelectorAll('.swiperWhy').length) {
     slidesPerView: 3,
     speed: 600,
 
+    navigation: {
+      nextEl: ".swiperWhy-next",
+      prevEl: ".swiperWhy-prev",
+  },
+
     breakpoints: {
 
       640: {
@@ -126,11 +137,8 @@ if (document.querySelectorAll('.swiperWhy').length) {
       320: {
         slidesPerView: 'auto'
       }
-    }
+    },
 
-    // navigation: {
-    //     nextEl: ".aboutSwiper-silder-next",
-    // },
 
   })
 }
@@ -352,3 +360,58 @@ $(window).on('scroll', function(e) {
   }
   
 });
+
+
+
+
+
+
+//========================== Реализация функционала popup окон ====================
+
+function openPopup(popup) {
+  $('.popup').hide();
+  $('.overlay').show();
+  $('html').css('overflow', 'hidden');
+  popup.show();
+}
+
+function closePopup(closeBtn) {
+  $('.overlay').hide();
+  closeBtn.parent().hide();
+  $('html').css('overflow-y', 'auto');
+}
+$(document).on('click', '.popup_close', function(e) {
+  closePopup($(this));
+});
+
+$('.popup-callme-btn').click(function() {
+  openPopup($('.popup-callme'));
+});
+
+
+
+
+//========================== Реализация функционала аккордеона в карточках услуг ====================
+
+
+
+$('.services__card-description-btn').click(function() {
+  $(this).parent().find('.services__card-description').slideToggle(300);
+});
+
+
+
+
+//========================== Реализация функционала аккордеона бургер меню ====================
+
+
+$("#burger_menu").click(function() {
+  $(this).toggleClass('open');
+  $("html").toggleClass("hidden");
+});
+
+$(".header-adaptive__nav nav ul li ").click(function() {
+ $('#burger_menu').removeClass('open');
+ $("html").removeClass("hidden");
+});
+
