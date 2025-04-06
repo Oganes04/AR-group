@@ -3401,6 +3401,22 @@ body::-webkit-scrollbar-thumb {
     opacity: 1;
     transform: translateY(0);
   }
+
+  .partners__marquee.fade-in-right {
+    transform: translateX(100px);
+  }
+
+  .partners__marquee.fade-in-left {
+    transform: translateX(-100px);
+  }
+
+  .partners__marquee.fade-in-right.visible {
+    transform: translateX(0);
+  }
+
+  .partners__marquee.fade-in-left.visible {
+    transform: translateX(0);
+  }
 }
 
 @media only screen and (max-width: 640px) and (max-width: 640px) {
